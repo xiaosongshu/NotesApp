@@ -14,8 +14,8 @@
 
 @end
 
-@implementation KYJDetailViewController {
-}
+@implementation KYJDetailViewController;
+
 
 @synthesize note;
 @synthesize titleLabel;
@@ -47,4 +47,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:
+(UITextField *)textField {
+    [self.titleLabel resignFirstResponder];
+    [self.descriptionLabel resignFirstResponder];
+    return YES;
+}
+
+
+//- (IBAction)updateNote:(id)sender {
+//    KYJNotes *newNote = [[KYJNotes alloc] init];
+//    newNote.title = self.titleLabel.text;
+//    newNote.description = self.descriptionLabel.text;
+//    [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
+//
+//    
+//
+//}
 @end

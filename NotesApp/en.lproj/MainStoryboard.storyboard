@@ -61,7 +61,6 @@
         <!--Add Note Table View Controller - Add Note-->
         <scene sceneID="xcj-Du-L0S">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cak-Jp-JJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="vmj-qc-2Bg" customClass="KYJAddNoteTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Guu-xe-Y6F">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -84,6 +83,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vmj-qc-2Bg" id="Idg-6F-LVq"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -111,6 +113,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vmj-qc-2Bg" id="CYQ-yr-aaU"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -145,6 +150,7 @@
                         <outlet property="titleTextField" destination="ncr-yw-zqH" id="I93-GU-4XU"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cak-Jp-JJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="587" y="395"/>
         </scene>
@@ -153,7 +159,7 @@
             <objects>
                 <viewController id="4fw-Qn-mby" customClass="KYJDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0F-UU-lQn">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIq-1s-Dsm">
@@ -177,27 +183,50 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4fw-Qn-mby" id="UVu-eL-Ia7"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrr-PB-WN2">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4fw-Qn-mby" id="vYy-ru-9ft"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9YE-OP-in3">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Update Note">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateNote:" destination="4fw-Qn-mby" eventType="touchUpInside" id="C5L-f6-XE1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dNe-Yv-WIJ" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="148" id="616-jM-FWq"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="leading" secondItem="N7J-fU-maJ" secondAttribute="leading" type="default" id="6lu-u5-oOf"/>
+                            <constraint firstItem="dNe-Yv-WIJ" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="96" id="7aT-EA-WBC"/>
                             <constraint firstItem="cu2-gf-W5b" firstAttribute="centerX" secondItem="dNe-Yv-WIJ" secondAttribute="centerX" type="default" id="9sT-XR-sfJ"/>
                             <constraint firstItem="N7J-fU-maJ" firstAttribute="top" secondItem="JIq-1s-Dsm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FVC-9H-dZQ"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="top" secondItem="dNe-Yv-WIJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="O0h-O6-0gp"/>
+                            <constraint firstItem="cu2-gf-W5b" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="198" id="Rcw-3q-oj4"/>
+                            <constraint firstItem="9YE-OP-in3" firstAttribute="centerX" secondItem="N0F-UU-lQn" secondAttribute="centerX" type="default" id="UAp-5X-DCR"/>
                             <constraint firstItem="dNe-Yv-WIJ" firstAttribute="centerX" secondItem="JIq-1s-Dsm" secondAttribute="centerX" type="default" id="UdC-iL-XjE"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="trailing" secondItem="N7J-fU-maJ" secondAttribute="trailing" type="default" id="a6E-j5-ans"/>
-                            <constraint firstItem="dNe-Yv-WIJ" firstAttribute="leading" secondItem="N0F-UU-lQn" secondAttribute="leading" constant="107" id="cXS-D9-sDC"/>
-                            <constraint firstItem="jrr-PB-WN2" firstAttribute="centerX" secondItem="N0F-UU-lQn" secondAttribute="centerX" type="default" id="scR-cz-0xC"/>
-                            <constraint firstItem="cu2-gf-W5b" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="251" id="syv-SA-jUh"/>
-                            <constraint firstItem="JIq-1s-Dsm" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="61" id="xdI-KB-7DX"/>
+                            <constraint firstItem="9YE-OP-in3" firstAttribute="centerX" secondItem="jrr-PB-WN2" secondAttribute="centerX" type="default" id="adq-0q-cJR"/>
+                            <constraint firstAttribute="bottom" secondItem="9YE-OP-in3" secondAttribute="bottom" constant="8" id="de4-qc-urv"/>
+                            <constraint firstItem="dNe-Yv-WIJ" firstAttribute="leading" secondItem="N0F-UU-lQn" secondAttribute="leading" constant="107" id="eLy-5F-YBv"/>
+                            <constraint firstItem="JIq-1s-Dsm" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="9" id="ja4-Rp-P0E"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="jrr-PB-WN2" id="R6g-Dh-4N2"/>
                         <outlet property="titleLabel" destination="N7J-fU-maJ" id="sC0-b6-IMR"/>

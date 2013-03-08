@@ -18,8 +18,6 @@
 @end
 
 @implementation KYJTableViewController {
-    //NSMutableArray *notes;
-
 }
 
 @synthesize notes;
@@ -158,5 +156,11 @@
                           withRowAnimation:UITableViewRowAnimationAutomatic];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
+
+//- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote
+//{
+//    // update note not just add it
+//    [self.notes addObject: updatedNote];
+//}
 
 @end

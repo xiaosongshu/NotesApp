@@ -11,14 +11,13 @@
 
 @class KYJAddNoteTableViewController;
 
-@protocol KYJAddNoteTableViewController <NSObject>
-- (void)addNoteViewControllerDidCancel: (KYJAddNoteTableViewController *)controller;
+@protocol KYJAddNoteTableViewControllerDelegate <NSObject>
 - (void)addNoteTableViewController: (KYJAddNoteTableViewController *)controller didAddNote:(KYJNotes *)note;
 @end
 
 @interface KYJAddNoteTableViewController : UITableViewController
 
-@property (nonatomic, weak) id <KYJAddNoteTableViewController> delegate;
+@property (nonatomic, weak) id <KYJAddNoteTableViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

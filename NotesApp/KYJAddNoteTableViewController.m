@@ -77,4 +77,11 @@
     [self.delegate addNoteTableViewController:self didAddNote:note];
 }
 
+- (BOOL)textFieldShouldReturn:
+(UITextField *)textField {
+    [self.titleTextField resignFirstResponder];
+    [self.descriptionTextField resignFirstResponder];
+    return YES;
+}
+
 @end
