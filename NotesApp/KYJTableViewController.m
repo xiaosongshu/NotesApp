@@ -8,6 +8,7 @@
 
 #import "KYJTableViewController.h"
 #import "KYJNotes.h"
+#import "KYJDetailViewController.h"
 
 #define kKYJCellIdentifier @"My Cell Identifier"
 
@@ -21,6 +22,7 @@
 }
 
 @synthesize notes;
+@synthesize tableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -70,11 +72,9 @@
 {
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kKYJCellIdentifier];
-    
     KYJNotes *note = [self.notes objectAtIndex:indexPath.row];
 	cell.textLabel.text = note.title;
 	cell.detailTextLabel.text = note.description;
-
     return cell;
 }
 
@@ -128,6 +128,14 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showNoteDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        KYJDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.note = [notes objectAtIndex:indexPath.row];
+    }
 }
 
 @end

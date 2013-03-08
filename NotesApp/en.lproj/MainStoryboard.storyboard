@@ -34,7 +34,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="4fw-Qn-mby" kind="modal" id="lpG-7v-Ufc"/>
+                                    <segue destination="4fw-Qn-mby" kind="modal" identifier="showNoteDetail" id="lpG-7v-Ufc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -44,15 +44,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="4Cd-xJ-zUP"/>
+                    <connections>
+                        <outlet property="tableView" destination="3Y6-0o-cwP" id="f0p-aO-jYq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrh-io-QAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-408" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="tWH-QA-ofK">
             <objects>
-                <viewController id="4fw-Qn-mby" sceneMemberID="viewController">
+                <viewController id="4fw-Qn-mby" customClass="KYJDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0F-UU-lQn">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -99,6 +102,10 @@
                             <constraint firstItem="JIq-1s-Dsm" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="61" id="xdI-KB-7DX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="jrr-PB-WN2" id="R6g-Dh-4N2"/>
+                        <outlet property="titleLabel" destination="N7J-fU-maJ" id="sC0-b6-IMR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwI-gA-jKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,18 +127,6 @@
             <point key="canvasLocation" x="-912" y="143"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="KYJTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KYJTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

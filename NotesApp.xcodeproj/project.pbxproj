@@ -20,6 +20,7 @@
 		0A2BC19716DF95C000C8F1D0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2BC19516DF95C000C8F1D0 /* MainStoryboard.storyboard */; };
 		0A2BC19A16DF95C000C8F1D0 /* KYJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2BC19916DF95C000C8F1D0 /* KYJViewController.m */; };
 		0A4980D816E94CFC00859BE7 /* KYJNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980D716E94CFC00859BE7 /* KYJNotes.m */; };
+		0A4980DB16E99F0200859BE7 /* KYJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		0A2BC19916DF95C000C8F1D0 /* KYJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYJViewController.m; sourceTree = "<group>"; };
 		0A4980D616E94CFC00859BE7 /* KYJNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYJNotes.h; sourceTree = "<group>"; };
 		0A4980D716E94CFC00859BE7 /* KYJNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJNotes.m; sourceTree = "<group>"; };
+		0A4980D916E99F0200859BE7 /* KYJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYJDetailViewController.h; sourceTree = "<group>"; };
+		0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				0A2BC18C16DF95C000C8F1D0 /* KYJAppDelegate.h */,
 				0A2BC18D16DF95C000C8F1D0 /* KYJAppDelegate.m */,
 				0A2BC19516DF95C000C8F1D0 /* MainStoryboard.storyboard */,
+				0A4980D916E99F0200859BE7 /* KYJDetailViewController.h */,
+				0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */,
 				0A4980D616E94CFC00859BE7 /* KYJNotes.h */,
 				0A4980D716E94CFC00859BE7 /* KYJNotes.m */,
 				0A1C88A016E4538C004CFEEA /* KYJTableViewController.h */,
@@ -189,6 +194,7 @@
 				0A2BC19A16DF95C000C8F1D0 /* KYJViewController.m in Sources */,
 				0A1C88A216E4538C004CFEEA /* KYJTableViewController.m in Sources */,
 				0A4980D816E94CFC00859BE7 /* KYJNotes.m in Sources */,
+				0A4980DB16E99F0200859BE7 /* KYJDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,9 @@
 @interface KYJTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *notes;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+
 
 
 
