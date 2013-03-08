@@ -9,6 +9,7 @@
 #import "KYJTableViewController.h"
 #import "KYJNotes.h"
 #import "KYJDetailViewController.h"
+#import "KYJAddNoteTableViewController.h"
 
 #define kKYJCellIdentifier @"My Cell Identifier"
 
@@ -17,7 +18,7 @@
 @end
 
 @implementation KYJTableViewController {
-    NSMutableArray *notes;
+    //NSMutableArray *notes;
 
 }
 
@@ -136,6 +137,26 @@
         KYJDetailViewController *destViewController = segue.destinationViewController;
         destViewController.note = [notes objectAtIndex:indexPath.row];
     }
+    if ([segue.identifier isEqualToString:@"addNote"]) {
+		UINavigationController *navigationController = segue.destinationViewController;
+		KYJAddNoteTableViewController *addNoteViewController = [[navigationController viewControllers]
+                                                                objectAtIndex:0];
+		addNoteViewController.delegate = self;
+    }
+}
+
+- (void)addNoteTableViewController:
+(KYJAddNoteTableViewController *)controller
+                       didAddNote:(KYJNotes *)note
+{
+	[self.notes addObject:note];
+	NSIndexPath *indexPath =
+    [NSIndexPath indexPathForRow:[self.notes count] - 1
+                       inSection:0];
+	[self.tableView insertRowsAtIndexPaths:
+     [NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
