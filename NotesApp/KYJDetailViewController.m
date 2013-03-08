@@ -16,7 +16,7 @@
 
 @implementation KYJDetailViewController;
 
-
+@synthesize delegate;
 @synthesize note;
 @synthesize titleLabel;
 @synthesize descriptionLabel;
@@ -55,13 +55,13 @@
 }
 
 
-//- (IBAction)updateNote:(id)sender {
-//    KYJNotes *newNote = [[KYJNotes alloc] init];
-//    newNote.title = self.titleLabel.text;
-//    newNote.description = self.descriptionLabel.text;
-//    [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
-//
-//    
-//
-//}
+- (IBAction)updateNote:(id)sender {
+    KYJNotes *newNote = [[KYJNotes alloc] init];
+    newNote.title = self.titleLabel.text;
+    newNote.description = self.descriptionLabel.text;
+    [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
+
+    
+
+}
 @end

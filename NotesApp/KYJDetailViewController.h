@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "KYJNotes.h"
 
-//@class KYJDetailViewController;
+@class KYJDetailViewController;
 
-//@protocol KYJDetailViewControllerDelegate <NSObject>
-//- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote;
-//@end
+@protocol KYJDetailViewControllerDelegate <NSObject>
+- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote;
+@end
 
 @interface KYJDetailViewController : UIViewController;
 
-//@property (nonatomic, weak) id <KYJDetailViewControllerDelegate> delegate;
+@property (nonatomic, weak) id <KYJDetailViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleLabel;
 
@@ -25,7 +25,7 @@
 
 @property (strong, nonatomic) KYJNotes *note;
 
-//- (IBAction)updateNote:(id)sender;
+- (IBAction)updateNote:(id)sender;
 
 @end
 

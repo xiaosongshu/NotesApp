@@ -157,10 +157,18 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote
-//{
-//    // update note not just add it
-//    [self.notes addObject: updatedNote];
-//}
+- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote
+{
+    // update note not just add it
+    [self.notes addObject: updatedNote];
+	NSIndexPath *indexPath =
+    [NSIndexPath indexPathForRow:[self.notes count] - 1
+                       inSection:0];
+	[self.tableView insertRowsAtIndexPaths:
+     [NSArray arrayWithObject:indexPath]
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+	[self dismissViewControllerAnimated:YES completion:nil];
+
+}
 
 @end

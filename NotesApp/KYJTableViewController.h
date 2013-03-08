@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KYJDetailViewController.h"
 
-@interface KYJTableViewController : UITableViewController
-//@interface KYJTableViewController : UITableViewController <KYJDetailViewControllerDelegate>
+@interface KYJTableViewController : UITableViewController <KYJDetailViewControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
