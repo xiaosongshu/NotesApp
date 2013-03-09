@@ -21,6 +21,8 @@
 		0A4980D816E94CFC00859BE7 /* KYJNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980D716E94CFC00859BE7 /* KYJNotes.m */; };
 		0A4980DB16E99F0200859BE7 /* KYJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */; };
 		0A4980DE16E9AE0500859BE7 /* KYJAddNoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */; };
+		0A4A938416EA73D100C5ACFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4A938316EA73D100C5ACFA /* MapKit.framework */; };
+		0A7C0C8F16EA76FB00490D59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJDetailViewController.m; sourceTree = "<group>"; };
 		0A4980DC16E9AE0500859BE7 /* KYJAddNoteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYJAddNoteTableViewController.h; sourceTree = "<group>"; };
 		0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJAddNoteTableViewController.m; sourceTree = "<group>"; };
+		0A4A938316EA73D100C5ACFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7C0C8F16EA76FB00490D59 /* CoreLocation.framework in Frameworks */,
+				0A4A938416EA73D100C5ACFA /* MapKit.framework in Frameworks */,
 				0A2BC17E16DF95C000C8F1D0 /* UIKit.framework in Frameworks */,
 				0A2BC18016DF95C000C8F1D0 /* Foundation.framework in Frameworks */,
 				0A2BC18216DF95C000C8F1D0 /* CoreGraphics.framework in Frameworks */,
@@ -65,6 +71,8 @@
 		0A2BC17116DF95C000C8F1D0 = {
 			isa = PBXGroup;
 			children = (
+				0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */,
+				0A4A938316EA73D100C5ACFA /* MapKit.framework */,
 				0A2BC18316DF95C000C8F1D0 /* NotesApp */,
 				0A2BC17C16DF95C000C8F1D0 /* Frameworks */,
 				0A2BC17B16DF95C000C8F1D0 /* Products */,

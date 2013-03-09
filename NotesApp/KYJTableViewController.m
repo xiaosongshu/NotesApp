@@ -45,15 +45,21 @@
     notes = [NSMutableArray arrayWithCapacity:20];
 	KYJNotes *note = [[KYJNotes alloc] init];
     note.title = @"Title 1";
-    note.description = @"Description 1";
+    note.description = @"Description 1 - @Boston";
+    note.latitude = 39.281516;
+    note.longitude = -76.580806;
     [notes addObject:note];
     note = [[KYJNotes alloc] init];
     note.title = @"Title 2";
-    note.description = @"Description 2";
+    note.description = @"Description 2 - @London";
+    note.latitude = 51.5081289;
+    note.longitude = -0.128005;
     [notes addObject:note];
     note = [[KYJNotes alloc] init];
     note.title = @"Title 3";
-    note.description = @"Description 3";
+    note.description = @"Description 3 - @New York";
+    note.latitude = 40.7167;
+    note.longitude = -74;
     [notes addObject:note];
     
     
@@ -160,6 +166,7 @@
 - (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote
 {
     // update note not just add it
+    NSLog(@"Inside didUpdateNote");
     [self.notes addObject: updatedNote];
 	NSIndexPath *indexPath =
     [NSIndexPath indexPathForRow:[self.notes count] - 1

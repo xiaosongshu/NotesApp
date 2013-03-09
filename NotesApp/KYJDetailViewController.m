@@ -9,9 +9,10 @@
 #import "KYJDetailViewController.h"
 #import "KYJNotes.h"
 
+#define METERS_PER_MILE 1609.344
+
+
 @interface KYJDetailViewController ()
-
-
 @end
 
 @implementation KYJDetailViewController;
@@ -37,14 +38,41 @@
     // note = [[KYJNotes alloc] init];
     titleLabel.text = note.title;
     descriptionLabel.text = note.description;
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // 1
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = note.latitude;
+    zoomLocation.longitude= note.longitude;
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2*METERS_PER_MILE, 2*METERS_PER_MILE);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
     
     
+    // 4
+    CLLocation *location = [[CLLocation alloc] initWithLatitude: zoomLocation.latitude longitude: zoomLocation.longitude];
+    [self addPinToMatAtLocation: location];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//add helper method
+- (void)addPinToMatAtLocation:(CLLocation *)location
+{
+    //red pin on map
+    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+    pin.coordinate = location.coordinate;
+    pin.title = @"You Left the Note Here!";
+    [self.mapView addAnnotation:pin];
 }
 
 - (BOOL)textFieldShouldReturn:
@@ -61,7 +89,6 @@
     newNote.description = self.descriptionLabel.text;
     [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
 
-    
 
 }
 @end

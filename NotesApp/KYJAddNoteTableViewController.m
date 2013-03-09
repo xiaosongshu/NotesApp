@@ -10,13 +10,16 @@
 #import "KYJNotes.h"
 #import "KYJTableViewController.h"
 
-@interface KYJAddNoteTableViewController ()
+@interface KYJAddNoteTableViewController () {
+    KYJNotes *note;
+}
 
 @end
 
 @implementation KYJAddNoteTableViewController
 
 @synthesize delegate;
+@synthesize locationManager;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,16 +34,33 @@
 {
     [super viewDidLoad];
     
+    note = [[KYJNotes alloc] init];
+
     self.titleTextField.adjustsFontSizeToFitWidth = YES;
     
     self.descriptionTextField.adjustsFontSizeToFitWidth = YES;
-
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // locationManager update as location
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager startUpdatingLocation];
+    
+    CLLocation *location = [locationManager location];
+    
+    // Configure the new event with information from the location
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
+    NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
+    
+    NSLog(@"dLatitude : %@", latitude);
+    NSLog(@"dLongitude : %@",longitude);
+    
+    // Add location data (where Note was saved) to Note
+    note.latitude = coordinate.latitude;
+    note.longitude = coordinate.longitude;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,9 +91,8 @@
 }
 - (IBAction)done:(id)sender
 {
-    KYJNotes *note = [[KYJNotes alloc] init];
 	note.title = self.titleTextField.text;
-	note.description = self.descriptionTextField.text;
+	note.description = self.descriptionTextField.text;    
     [self.delegate addNoteTableViewController:self didAddNote:note];
 }
 

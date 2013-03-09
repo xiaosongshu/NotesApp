@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "KYJNotes.h"
+#import <MapKit/MapKit.h>
 
 @class KYJDetailViewController;
 
@@ -15,7 +16,7 @@
 - (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote;
 @end
 
-@interface KYJDetailViewController : UIViewController;
+@interface KYJDetailViewController : UIViewController <CLLocationManagerDelegate>;
 
 @property (nonatomic, weak) id <KYJDetailViewControllerDelegate> delegate;
 
@@ -26,6 +27,11 @@
 @property (strong, nonatomic) KYJNotes *note;
 
 - (IBAction)updateNote:(id)sender;
+
+//Add CLLocationManagerDelegate
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 
 @end
 

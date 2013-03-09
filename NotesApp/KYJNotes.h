@@ -12,5 +12,10 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *description;
+@property float latitude;
+@property float longitude;
+
+
+
 
 @end

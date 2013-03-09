@@ -12,5 +12,7 @@
 
 @synthesize title;
 @synthesize description;
+@synthesize latitude;
+@synthesize longitude;
 
 @end

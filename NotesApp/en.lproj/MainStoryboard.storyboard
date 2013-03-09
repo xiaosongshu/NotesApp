@@ -207,6 +207,12 @@
                                     <action selector="updateNote:" destination="4fw-Qn-mby" eventType="touchUpInside" id="CDj-3G-bg6"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fv5-0b-JQB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="uM2-AD-2td"/>
+                                    <constraint firstAttribute="width" constant="240" id="zY4-rC-20p"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -215,20 +221,23 @@
                             <constraint firstItem="cu2-gf-W5b" firstAttribute="centerX" secondItem="dNe-Yv-WIJ" secondAttribute="centerX" type="default" id="9sT-XR-sfJ"/>
                             <constraint firstItem="N7J-fU-maJ" firstAttribute="top" secondItem="JIq-1s-Dsm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FVC-9H-dZQ"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="top" secondItem="dNe-Yv-WIJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="O0h-O6-0gp"/>
-                            <constraint firstItem="cu2-gf-W5b" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="198" id="Rcw-3q-oj4"/>
                             <constraint firstItem="9YE-OP-in3" firstAttribute="centerX" secondItem="N0F-UU-lQn" secondAttribute="centerX" type="default" id="UAp-5X-DCR"/>
                             <constraint firstItem="dNe-Yv-WIJ" firstAttribute="centerX" secondItem="JIq-1s-Dsm" secondAttribute="centerX" type="default" id="UdC-iL-XjE"/>
+                            <constraint firstAttribute="bottom" secondItem="Fv5-0b-JQB" secondAttribute="bottom" constant="73" id="UfB-f4-VN5"/>
+                            <constraint firstItem="Fv5-0b-JQB" firstAttribute="centerX" secondItem="jrr-PB-WN2" secondAttribute="centerX" type="default" id="XlS-nK-qtk"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="trailing" secondItem="N7J-fU-maJ" secondAttribute="trailing" type="default" id="a6E-j5-ans"/>
-                            <constraint firstItem="9YE-OP-in3" firstAttribute="centerX" secondItem="jrr-PB-WN2" secondAttribute="centerX" type="default" id="adq-0q-cJR"/>
                             <constraint firstAttribute="bottom" secondItem="9YE-OP-in3" secondAttribute="bottom" constant="8" id="de4-qc-urv"/>
                             <constraint firstItem="dNe-Yv-WIJ" firstAttribute="leading" secondItem="N0F-UU-lQn" secondAttribute="leading" constant="107" id="eLy-5F-YBv"/>
+                            <constraint firstItem="Fv5-0b-JQB" firstAttribute="centerX" secondItem="9YE-OP-in3" secondAttribute="centerX" type="default" id="ie3-Ko-mAo"/>
                             <constraint firstItem="JIq-1s-Dsm" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="9" id="ja4-Rp-P0E"/>
+                            <constraint firstItem="cu2-gf-W5b" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="181" id="qry-EM-GEF"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="jrr-PB-WN2" id="R6g-Dh-4N2"/>
+                        <outlet property="mapView" destination="Fv5-0b-JQB" id="0SE-a1-WK0"/>
                         <outlet property="titleLabel" destination="N7J-fU-maJ" id="sC0-b6-IMR"/>
                     </connections>
                 </viewController>
@@ -286,6 +295,7 @@
             <relationships>
                 <relationship kind="action" name="updateNote:"/>
                 <relationship kind="outlet" name="descriptionLabel" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UITextField"/>
             </relationships>
         </class>

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "KYJNotes.h"
 
 @class KYJAddNoteTableViewController;
@@ -15,7 +17,12 @@
 - (void)addNoteTableViewController: (KYJAddNoteTableViewController *)controller didAddNote:(KYJNotes *)note;
 @end
 
-@interface KYJAddNoteTableViewController : UITableViewController
+@interface KYJAddNoteTableViewController : UITableViewController {
+    CLLocationManager *locationManager;
+
+}
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @property (nonatomic, weak) id <KYJAddNoteTableViewControllerDelegate> delegate;
 
