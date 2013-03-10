@@ -23,6 +23,8 @@
 		0A4980DE16E9AE0500859BE7 /* KYJAddNoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */; };
 		0A4A938416EA73D100C5ACFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4A938316EA73D100C5ACFA /* MapKit.framework */; };
 		0A7C0C8F16EA76FB00490D59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */; };
+		0A7C0C9916ED14EA00490D59 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9816ED14EA00490D59 /* Icon.png */; };
+		0A7C0C9B16ED14EE00490D59 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJAddNoteTableViewController.m; sourceTree = "<group>"; };
 		0A4A938316EA73D100C5ACFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A7C0C9816ED14EA00490D59 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		0A2BC17116DF95C000C8F1D0 = {
 			isa = PBXGroup;
 			children = (
+				0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */,
+				0A7C0C9816ED14EA00490D59 /* Icon.png */,
 				0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */,
 				0A4A938316EA73D100C5ACFA /* MapKit.framework */,
 				0A2BC18316DF95C000C8F1D0 /* NotesApp */,
@@ -187,6 +193,8 @@
 				0A2BC19216DF95C000C8F1D0 /* Default@2x.png in Resources */,
 				0A2BC19416DF95C000C8F1D0 /* Default-568h@2x.png in Resources */,
 				0A2BC19716DF95C000C8F1D0 /* MainStoryboard.storyboard in Resources */,
+				0A7C0C9916ED14EA00490D59 /* Icon.png in Resources */,
+				0A7C0C9B16ED14EE00490D59 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
