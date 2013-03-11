@@ -8,6 +8,7 @@
 
 #import "KYJDetailViewController.h"
 #import "KYJNotes.h"
+#import "KYJTableViewController.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -15,7 +16,8 @@
 @interface KYJDetailViewController ()
 @end
 
-@implementation KYJDetailViewController;
+@implementation KYJDetailViewController {
+}
 
 @synthesize delegate;
 @synthesize note;
@@ -82,13 +84,26 @@
     return YES;
 }
 
+//- (IBAction)updateNote:(id)sender {
+//    KYJNotes *newNote = [[KYJNotes alloc] init];
+//    newNote.title = self.titleLabel.text;
+//    newNote.description = self.descriptionLabel.text;
+//    NSLog(@"delegate = %@", self.delegate);
+//    [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
+//}
 
-- (IBAction)updateNote:(id)sender {
-    KYJNotes *newNote = [[KYJNotes alloc] init];
-    newNote.title = self.titleLabel.text;
-    newNote.description = self.descriptionLabel.text;
-    [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
-
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"updateNoteSegue"]) {
+        //self.updatedNote.description = self.descriptionLabel.text;
+        //self.updatedNote.title = self.titleLabel.text;
+        self.titleName = self.titleLabel.text;
+        self.descriptionName = self.descriptionLabel.text;
+        self.updatedNote.title = self.titleLabel.text;
+        self.updatedNote.description = self.descriptionLabel.text;
+        //NSLog(@"self.titleLabel.text = %@", self.titleLabel.text);
+        //NSLog(@"titleName = %@", self.titleName);
+        //NSLog(@"updatedNote title = %@", self.updatedNote.title);
+    }
 }
+
 @end

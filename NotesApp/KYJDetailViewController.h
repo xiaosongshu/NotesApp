@@ -21,12 +21,15 @@
 @property (nonatomic, weak) id <KYJDetailViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleLabel;
+@property (strong, nonatomic) NSString *titleName;
 
 @property (weak, nonatomic) IBOutlet UITextField *descriptionLabel;
+@property (strong, nonatomic) NSString *descriptionName;
+
 
 @property (strong, nonatomic) KYJNotes *note;
+@property (strong, nonatomic) KYJNotes *updatedNote;
 
-- (IBAction)updateNote:(id)sender;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;

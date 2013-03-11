@@ -174,8 +174,20 @@
 	[self.tableView insertRowsAtIndexPaths:
      [NSArray arrayWithObject:indexPath]
                           withRowAnimation:UITableViewRowAnimationAutomatic];
-	[self dismissViewControllerAnimated:YES completion:nil];
 
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (IBAction)updateNote:(UIStoryboardSegue *)segue {
+    KYJDetailViewController *detailVC = segue.sourceViewController;
+    //KYJNotes *updatedNote = detailVC.updatedNote;
+    KYJNotes *updatedNote = [[KYJNotes alloc] init];
+    updatedNote.title = detailVC.titleName;
+    updatedNote.description = detailVC.descriptionName;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
+    [tableView reloadData];
+}
+
 
 @end
