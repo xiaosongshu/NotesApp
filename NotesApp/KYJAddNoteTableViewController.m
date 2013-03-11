@@ -33,7 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     note = [[KYJNotes alloc] init];
 
     self.titleTextField.adjustsFontSizeToFitWidth = YES;
@@ -62,6 +62,8 @@
     note.latitude = coordinate.latitude;
     note.longitude = coordinate.longitude;
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {

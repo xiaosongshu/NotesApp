@@ -14,8 +14,4 @@
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 
-
-
-
-
 @end

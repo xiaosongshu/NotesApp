@@ -163,21 +163,6 @@
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote
-{
-    // update note not just add it
-    NSLog(@"Inside didUpdateNote");
-    [self.notes addObject: updatedNote];
-	NSIndexPath *indexPath =
-    [NSIndexPath indexPathForRow:[self.notes count] - 1
-                       inSection:0];
-	[self.tableView insertRowsAtIndexPaths:
-     [NSArray arrayWithObject:indexPath]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
-
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (IBAction)updateNote:(UIStoryboardSegue *)segue {
     KYJDetailViewController *detailVC = segue.sourceViewController;
     //KYJNotes *updatedNote = detailVC.updatedNote;

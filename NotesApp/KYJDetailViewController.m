@@ -40,10 +40,9 @@
     // note = [[KYJNotes alloc] init];
     titleLabel.text = note.title;
     descriptionLabel.text = note.description;
-
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     // 1
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = note.latitude;
@@ -53,13 +52,16 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2*METERS_PER_MILE, 2*METERS_PER_MILE);
     
     // 3
-    [_mapView setRegion:viewRegion animated:YES];
+    [self.mapView setRegion:viewRegion animated:YES];
     
     
     // 4
     CLLocation *location = [[CLLocation alloc] initWithLatitude: zoomLocation.latitude longitude: zoomLocation.longitude];
     [self addPinToMatAtLocation: location];
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -100,9 +102,6 @@
         self.descriptionName = self.descriptionLabel.text;
         self.updatedNote.title = self.titleLabel.text;
         self.updatedNote.description = self.descriptionLabel.text;
-        //NSLog(@"self.titleLabel.text = %@", self.titleLabel.text);
-        //NSLog(@"titleName = %@", self.titleName);
-        //NSLog(@"updatedNote title = %@", self.updatedNote.title);
     }
 }
 
