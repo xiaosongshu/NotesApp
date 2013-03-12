@@ -23,6 +23,7 @@
 @synthesize note;
 @synthesize titleLabel;
 @synthesize descriptionLabel;
+@synthesize locationLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,8 +41,13 @@
     // note = [[KYJNotes alloc] init];
     titleLabel.text = note.title;
     descriptionLabel.text = note.description;
+    locationLabel.text = note.locationName;
+    self.latitude = note.latitude;
+    self.longitude = note.longitude;
+    
 }
 
+// viewDidAppear to fix problem not updating on first try
 - (void)viewDidAppear:(BOOL)animated {
     // 1
     CLLocationCoordinate2D zoomLocation;
@@ -58,6 +64,7 @@
     // 4
     CLLocation *location = [[CLLocation alloc] initWithLatitude: zoomLocation.latitude longitude: zoomLocation.longitude];
     [self addPinToMatAtLocation: location];
+    
     
     
 }
@@ -83,6 +90,7 @@
 (UITextField *)textField {
     [self.titleLabel resignFirstResponder];
     [self.descriptionLabel resignFirstResponder];
+    [self.locationLabel resignFirstResponder];
     return YES;
 }
 
@@ -100,8 +108,11 @@
         //self.updatedNote.title = self.titleLabel.text;
         self.titleName = self.titleLabel.text;
         self.descriptionName = self.descriptionLabel.text;
-        self.updatedNote.title = self.titleLabel.text;
-        self.updatedNote.description = self.descriptionLabel.text;
+        self.locationName = self.locationLabel.text;
+        
+//        self.updatedNote.title = self.titleLabel.text;
+//        self.updatedNote.description = self.descriptionLabel.text;
+//        self.updatedNote.locationName = self.locationLabel.text;
     }
 }
 

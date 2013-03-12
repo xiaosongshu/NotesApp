@@ -14,5 +14,6 @@
 @synthesize description;
 @synthesize latitude;
 @synthesize longitude;
+@synthesize locationName;
 
 @end

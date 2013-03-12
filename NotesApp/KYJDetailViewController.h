@@ -26,10 +26,14 @@
 @property (weak, nonatomic) IBOutlet UITextField *descriptionLabel;
 @property (strong, nonatomic) NSString *descriptionName;
 
+@property (weak, nonatomic) IBOutlet UITextField *locationLabel;
+@property (strong, nonatomic) NSString *locationName;
 
 @property (strong, nonatomic) KYJNotes *note;
 @property (strong, nonatomic) KYJNotes *updatedNote;
 
+@property float latitude;
+@property float longitude;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;

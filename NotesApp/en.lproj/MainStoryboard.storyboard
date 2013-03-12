@@ -56,7 +56,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zrh-io-QAw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-408" y="143"/>
+            <point key="canvasLocation" x="-1112" y="343"/>
         </scene>
         <!--Add Note Table View Controller - Add Note-->
         <scene sceneID="xcj-Du-L0S">
@@ -69,30 +69,27 @@
                         <sections>
                             <tableViewSection headerTitle="Title of Note" id="Lue-lB-bIe">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FFd-OO-QYM">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cDa-Ic-kLT">
                                         <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ncr-yw-zqH">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tpv-ca-zD1">
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="IGE-TV-lEd"/>
-                                                        <constraint firstAttribute="width" constant="300" id="Ylb-zi-MoB"/>
+                                                        <constraint firstAttribute="height" constant="30" id="6VA-zr-M7U"/>
+                                                        <constraint firstAttribute="width" constant="300" id="7Ip-OB-25U"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="vmj-qc-2Bg" id="Idg-6F-LVq"/>
-                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="ncr-yw-zqH" firstAttribute="centerX" secondItem="FFd-OO-QYM" secondAttribute="centerX" type="default" id="fta-95-Y27"/>
-                                            <constraint firstItem="ncr-yw-zqH" firstAttribute="centerY" secondItem="FFd-OO-QYM" secondAttribute="centerY" type="default" id="nn7-RL-AHE"/>
+                                            <constraint firstItem="Tpv-ca-zD1" firstAttribute="centerY" secondItem="cDa-Ic-kLT" secondAttribute="centerY" type="default" id="D6H-Od-CBf"/>
+                                            <constraint firstItem="Tpv-ca-zD1" firstAttribute="centerX" secondItem="cDa-Ic-kLT" secondAttribute="centerX" type="default" id="OwL-2g-YLv"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -127,6 +124,56 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Location" id="6L5-nV-JaS">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="olE-2J-XM4">
+                                        <rect key="frame" x="0.0" y="230" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fl1-Ok-Qg4">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="pcn-4i-pja"/>
+                                                        <constraint firstAttribute="height" constant="30" id="tDO-O5-Z8L"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="vmj-qc-2Bg" id="ee9-7M-Sl5"/>
+                                                    </connections>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMD-YX-PFp">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="dXx-f7-PvM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <state key="normal" title="Use Foursquare Provided Location">
+                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <state key="highlighted">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="cMc-zd-ft4" kind="push" id="nSH-1M-Row"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="yMD-YX-PFp" firstAttribute="leading" secondItem="Fl1-Ok-Qg4" secondAttribute="leading" type="default" id="2Nn-EO-w28"/>
+                                            <constraint firstItem="yMD-YX-PFp" firstAttribute="top" secondItem="olE-2J-XM4" secondAttribute="top" constant="1" id="86K-zx-3iq"/>
+                                            <constraint firstItem="Fl1-Ok-Qg4" firstAttribute="centerY" secondItem="olE-2J-XM4" secondAttribute="centerY" type="default" id="8cM-Sc-RNL"/>
+                                            <constraint firstItem="yMD-YX-PFp" firstAttribute="baseline" secondItem="Fl1-Ok-Qg4" secondAttribute="baseline" type="default" id="ODD-gm-jkt"/>
+                                            <constraint firstItem="Fl1-Ok-Qg4" firstAttribute="centerX" secondItem="olE-2J-XM4" secondAttribute="centerX" type="default" id="XOh-we-3xO"/>
+                                            <constraint firstItem="Fl1-Ok-Qg4" firstAttribute="trailing" secondItem="yMD-YX-PFp" secondAttribute="trailing" type="default" id="sKW-W1-alS"/>
+                                        </constraints>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="vmj-qc-2Bg" id="PxC-S5-FE9"/>
@@ -147,12 +194,49 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="n20-Yn-8cI" id="a6f-uH-ok8"/>
-                        <outlet property="titleTextField" destination="ncr-yw-zqH" id="I93-GU-4XU"/>
+                        <outlet property="titleTextField" destination="Tpv-ca-zD1" id="cF4-PL-o7v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cak-Jp-JJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="587" y="395"/>
+            <point key="canvasLocation" x="-117" y="595"/>
+        </scene>
+        <!--Foursquare View Controller - Locations Nearby-->
+        <scene sceneID="nCI-Xk-hnd">
+            <objects>
+                <tableViewController id="cMc-zd-ft4" customClass="KYJFoursquareViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Rp-HF-9K6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8fA-Z9-gSQ">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cMc-zd-ft4" id="n75-Rh-j9b"/>
+                            <outlet property="delegate" destination="cMc-zd-ft4" id="Z4A-58-FVo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locations Nearby" id="yh1-Ye-d2C">
+                        <barButtonItem key="rightBarButtonItem" title="Select" id="Rkp-2k-8gO">
+                            <connections>
+                                <segue destination="vWm-pH-kzl" kind="unwind" identifier="foursquareSegue" unwindAction="foursquareLocation:" id="hZi-xa-sra"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ze-S1-l4y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vWm-pH-kzl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="595"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="tWH-QA-ofK">
@@ -213,30 +297,41 @@
                                     <constraint firstAttribute="width" constant="240" id="zY4-rC-20p"/>
                                 </constraints>
                             </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOd-rH-I62">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4fw-Qn-mby" id="8Jg-Sq-f4M"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="leading" secondItem="N7J-fU-maJ" secondAttribute="leading" type="default" id="6lu-u5-oOf"/>
-                            <constraint firstItem="dNe-Yv-WIJ" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="96" id="7aT-EA-WBC"/>
+                            <constraint firstItem="cu2-gf-W5b" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="137" id="7JL-cp-61F"/>
                             <constraint firstItem="cu2-gf-W5b" firstAttribute="centerX" secondItem="dNe-Yv-WIJ" secondAttribute="centerX" type="default" id="9sT-XR-sfJ"/>
-                            <constraint firstItem="N7J-fU-maJ" firstAttribute="top" secondItem="JIq-1s-Dsm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FVC-9H-dZQ"/>
+                            <constraint firstItem="Fv5-0b-JQB" firstAttribute="centerX" secondItem="FOd-rH-I62" secondAttribute="centerX" type="default" id="FBj-Pk-AJy"/>
+                            <constraint firstItem="N7J-fU-maJ" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="33" id="IMI-nq-dP3"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="top" secondItem="dNe-Yv-WIJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="O0h-O6-0gp"/>
-                            <constraint firstItem="9YE-OP-in3" firstAttribute="centerX" secondItem="N0F-UU-lQn" secondAttribute="centerX" type="default" id="UAp-5X-DCR"/>
                             <constraint firstItem="dNe-Yv-WIJ" firstAttribute="centerX" secondItem="JIq-1s-Dsm" secondAttribute="centerX" type="default" id="UdC-iL-XjE"/>
                             <constraint firstAttribute="bottom" secondItem="Fv5-0b-JQB" secondAttribute="bottom" constant="73" id="UfB-f4-VN5"/>
-                            <constraint firstItem="Fv5-0b-JQB" firstAttribute="centerX" secondItem="jrr-PB-WN2" secondAttribute="centerX" type="default" id="XlS-nK-qtk"/>
                             <constraint firstItem="jrr-PB-WN2" firstAttribute="trailing" secondItem="N7J-fU-maJ" secondAttribute="trailing" type="default" id="a6E-j5-ans"/>
+                            <constraint firstItem="jrr-PB-WN2" firstAttribute="trailing" secondItem="FOd-rH-I62" secondAttribute="trailing" type="default" id="dF1-dy-KPD"/>
                             <constraint firstAttribute="bottom" secondItem="9YE-OP-in3" secondAttribute="bottom" constant="8" id="de4-qc-urv"/>
                             <constraint firstItem="dNe-Yv-WIJ" firstAttribute="leading" secondItem="N0F-UU-lQn" secondAttribute="leading" constant="107" id="eLy-5F-YBv"/>
+                            <constraint firstItem="FOd-rH-I62" firstAttribute="top" secondItem="cu2-gf-W5b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g5R-Wx-qrj"/>
+                            <constraint firstItem="dNe-Yv-WIJ" firstAttribute="top" secondItem="N7J-fU-maJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iDX-hl-faI"/>
                             <constraint firstItem="Fv5-0b-JQB" firstAttribute="centerX" secondItem="9YE-OP-in3" secondAttribute="centerX" type="default" id="ie3-Ko-mAo"/>
-                            <constraint firstItem="JIq-1s-Dsm" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="9" id="ja4-Rp-P0E"/>
-                            <constraint firstItem="cu2-gf-W5b" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="181" id="qry-EM-GEF"/>
+                            <constraint firstItem="FOd-rH-I62" firstAttribute="leading" secondItem="jrr-PB-WN2" secondAttribute="leading" type="default" id="kh2-5p-Cuy"/>
+                            <constraint firstItem="FOd-rH-I62" firstAttribute="centerX" secondItem="N0F-UU-lQn" secondAttribute="centerX" type="default" id="moX-kM-ViZ"/>
+                            <constraint firstItem="JIq-1s-Dsm" firstAttribute="top" secondItem="N0F-UU-lQn" secondAttribute="top" constant="5" id="zgQ-Za-gy3"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="jrr-PB-WN2" id="R6g-Dh-4N2"/>
+                        <outlet property="locationLabel" destination="FOd-rH-I62" id="x3H-AH-0AM"/>
                         <outlet property="mapView" destination="Fv5-0b-JQB" id="0SE-a1-WK0"/>
                         <outlet property="titleLabel" destination="N7J-fU-maJ" id="sC0-b6-IMR"/>
                     </connections>
@@ -244,7 +339,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwI-gA-jKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CgJ-ho-cG3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="61" y="-295"/>
+            <point key="canvasLocation" x="-643" y="-95"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U2Q-6X-pVI">
@@ -259,7 +354,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="klc-Le-gyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-912" y="143"/>
+            <point key="canvasLocation" x="-1616" y="343"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kHN-C3-PWe">
@@ -278,41 +373,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljG-IR-dFM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="395"/>
+            <point key="canvasLocation" x="-643" y="595"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="KYJAddNoteTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KYJAddNoteTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="descriptionTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="KYJDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KYJDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="KYJTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KYJTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="updateNote:" candidateClass="UIStoryboardSegue"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UIStoryboardSegue" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

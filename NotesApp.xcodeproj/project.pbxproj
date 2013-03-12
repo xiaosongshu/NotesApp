@@ -25,6 +25,7 @@
 		0A7C0C8F16EA76FB00490D59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */; };
 		0A7C0C9916ED14EA00490D59 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9816ED14EA00490D59 /* Icon.png */; };
 		0A7C0C9B16ED14EE00490D59 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */; };
+		0A7C0C9E16EE8CAE00490D59 /* KYJFoursquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9D16EE8CAE00490D59 /* KYJFoursquareViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +53,10 @@
 		0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJAddNoteTableViewController.m; sourceTree = "<group>"; };
 		0A4A938316EA73D100C5ACFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0A7C0C9816ED14EA00490D59 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		0A7C0C9816ED14EA00490D59 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		0A7C0C9C16EE8CAE00490D59 /* KYJFoursquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYJFoursquareViewController.h; sourceTree = "<group>"; };
+		0A7C0C9D16EE8CAE00490D59 /* KYJFoursquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJFoursquareViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +78,6 @@
 		0A2BC17116DF95C000C8F1D0 = {
 			isa = PBXGroup;
 			children = (
-				0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */,
-				0A7C0C9816ED14EA00490D59 /* Icon.png */,
 				0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */,
 				0A4A938316EA73D100C5ACFA /* MapKit.framework */,
 				0A2BC18316DF95C000C8F1D0 /* NotesApp */,
@@ -106,9 +107,13 @@
 		0A2BC18316DF95C000C8F1D0 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */,
+				0A7C0C9816ED14EA00490D59 /* Icon.png */,
 				0A2BC18C16DF95C000C8F1D0 /* KYJAppDelegate.h */,
 				0A2BC18D16DF95C000C8F1D0 /* KYJAppDelegate.m */,
 				0A2BC19516DF95C000C8F1D0 /* MainStoryboard.storyboard */,
+				0A7C0C9C16EE8CAE00490D59 /* KYJFoursquareViewController.h */,
+				0A7C0C9D16EE8CAE00490D59 /* KYJFoursquareViewController.m */,
 				0A4980DC16E9AE0500859BE7 /* KYJAddNoteTableViewController.h */,
 				0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */,
 				0A4980D916E99F0200859BE7 /* KYJDetailViewController.h */,
@@ -211,6 +216,7 @@
 				0A4980D816E94CFC00859BE7 /* KYJNotes.m in Sources */,
 				0A4980DB16E99F0200859BE7 /* KYJDetailViewController.m in Sources */,
 				0A4980DE16E9AE0500859BE7 /* KYJAddNoteTableViewController.m in Sources */,
+				0A7C0C9E16EE8CAE00490D59 /* KYJFoursquareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

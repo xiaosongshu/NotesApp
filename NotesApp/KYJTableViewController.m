@@ -48,18 +48,21 @@
     note.description = @"Description 1 - @Boston";
     note.latitude = 39.281516;
     note.longitude = -76.580806;
+    note.locationName = @"Boston";
     [notes addObject:note];
     note = [[KYJNotes alloc] init];
     note.title = @"Title 2";
     note.description = @"Description 2 - @London";
     note.latitude = 51.5081289;
     note.longitude = -0.128005;
+    note.locationName = @"London";
     [notes addObject:note];
     note = [[KYJNotes alloc] init];
     note.title = @"Title 3";
     note.description = @"Description 3 - @New York";
     note.latitude = 40.7167;
     note.longitude = -74;
+    note.locationName = @"New York";
     [notes addObject:note];
     
     
@@ -165,10 +168,12 @@
 
 - (IBAction)updateNote:(UIStoryboardSegue *)segue {
     KYJDetailViewController *detailVC = segue.sourceViewController;
-    //KYJNotes *updatedNote = detailVC.updatedNote;
     KYJNotes *updatedNote = [[KYJNotes alloc] init];
     updatedNote.title = detailVC.titleName;
     updatedNote.description = detailVC.descriptionName;
+    updatedNote.locationName = detailVC.locationName;
+    updatedNote.latitude = detailVC.latitude;
+    updatedNote.longitude = detailVC.longitude;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
     [tableView reloadData];

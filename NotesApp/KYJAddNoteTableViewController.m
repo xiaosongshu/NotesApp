@@ -9,6 +9,7 @@
 #import "KYJAddNoteTableViewController.h"
 #import "KYJNotes.h"
 #import "KYJTableViewController.h"
+#import "KYJFoursquareViewController.h"
 
 @interface KYJAddNoteTableViewController () {
     KYJNotes *note;
@@ -94,7 +95,7 @@
 - (IBAction)done:(id)sender
 {
 	note.title = self.titleTextField.text;
-	note.description = self.descriptionTextField.text;    
+	note.description = self.descriptionTextField.text;
     [self.delegate addNoteTableViewController:self didAddNote:note];
 }
 
@@ -103,6 +104,26 @@
     [self.titleTextField resignFirstResponder];
     [self.descriptionTextField resignFirstResponder];
     return YES;
+}
+
+//- (IBAction)passFoursquare:(UIStoryboardSegue *)segue {
+//      KYJFoursquareViewController *foursquareVC = segue.sourceViewController;
+//      note.latitude = foursquareVC.latitude;
+//      note.longitude = foursquareVC.longitude;
+//    
+////    KYJNotes *updatedNote = [[KYJNotes alloc] init];
+////    updatedNote.title = detailVC.titleName;
+////    updatedNote.description = detailVC.descriptionName;
+////    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+////    [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
+////    [tableView reloadData];
+//}
+
+- (IBAction)foursquareLocation:(UIStoryboardSegue *)segue {
+    KYJFoursquareViewController *addNoteVC = segue.sourceViewController;
+    note.latitude = addNoteVC.latitude;
+    note.longitude = addNoteVC.longitude;
+    note.locationName = addNoteVC.locationSelected;
 }
 
 @end
