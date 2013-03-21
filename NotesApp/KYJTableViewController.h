@@ -14,4 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *notes;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+
+
 @end

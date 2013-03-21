@@ -10,6 +10,8 @@
 #import "KYJNotes.h"
 #import "KYJTableViewController.h"
 #import "KYJFoursquareViewController.h"
+#import "KYJDataManager.h"
+
 
 @interface KYJAddNoteTableViewController () {
     KYJNotes *note;
@@ -96,6 +98,8 @@
 {
 	note.title = self.titleTextField.text;
 	note.description = self.descriptionTextField.text;
+    KYJDataManager *datamanager = [[KYJDataManager alloc] init];
+    [datamanager addNoteWithText: note.title description:note.description locationName:note.locationName longitude:note.longitude latitude:note.latitude];
     [self.delegate addNoteTableViewController:self didAddNote:note];
 }
 

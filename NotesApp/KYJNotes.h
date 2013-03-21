@@ -17,6 +17,4 @@
 @property float longitude;
 
 
-
-
 @end

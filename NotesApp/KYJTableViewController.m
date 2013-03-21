@@ -10,6 +10,7 @@
 #import "KYJNotes.h"
 #import "KYJDetailViewController.h"
 #import "KYJAddNoteTableViewController.h"
+#import "KYJDataManager.h"
 
 #define kKYJCellIdentifier @"My Cell Identifier"
 
@@ -63,10 +64,15 @@
     note.latitude = 40.7167;
     note.longitude = -74;
     note.locationName = @"New York";
-    [notes addObject:note];
+    [notes addObject:note]; 
     
-    
+    KYJDataManager *datamanager = [[KYJDataManager alloc] init];
+    [notes addObjectsFromArray:[datamanager getAllIdeas]];
+    [super viewDidLoad];
+    NSLog(@"viewDidAppear");
 }
+
+
 
 #pragma mark - Table view data source
 

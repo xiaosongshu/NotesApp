@@ -22,10 +22,15 @@
 		0A4980DB16E99F0200859BE7 /* KYJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */; };
 		0A4980DE16E9AE0500859BE7 /* KYJAddNoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */; };
 		0A4A938416EA73D100C5ACFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4A938316EA73D100C5ACFA /* MapKit.framework */; };
+		0A74AB0216FB4D0900688C60 /* NotesAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AB0016FB4D0900688C60 /* NotesAppModel.xcdatamodeld */; };
+		0A74AB0816FB4FE500688C60 /* KYJDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AB0716FB4FE500688C60 /* KYJDataManager.m */; };
+		0A74AB1D16FB5F9000688C60 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AB1C16FB5F9000688C60 /* Note.m */; };
+		0A74AB2016FB5F9000688C60 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A74AB1F16FB5F9000688C60 /* Location.m */; };
 		0A7C0C8F16EA76FB00490D59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */; };
 		0A7C0C9916ED14EA00490D59 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9816ED14EA00490D59 /* Icon.png */; };
 		0A7C0C9B16ED14EE00490D59 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */; };
 		0A7C0C9E16EE8CAE00490D59 /* KYJFoursquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C0C9D16EE8CAE00490D59 /* KYJFoursquareViewController.m */; };
+		0AB2B2B616F7675E006AC755 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB2B2B516F7675E006AC755 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,11 +57,19 @@
 		0A4980DC16E9AE0500859BE7 /* KYJAddNoteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYJAddNoteTableViewController.h; sourceTree = "<group>"; };
 		0A4980DD16E9AE0500859BE7 /* KYJAddNoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJAddNoteTableViewController.m; sourceTree = "<group>"; };
 		0A4A938316EA73D100C5ACFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A74AB0116FB4D0900688C60 /* NotesAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesAppModel.xcdatamodel; sourceTree = "<group>"; };
+		0A74AB0616FB4FE500688C60 /* KYJDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYJDataManager.h; path = ../KYJDataManager.h; sourceTree = "<group>"; };
+		0A74AB0716FB4FE500688C60 /* KYJDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYJDataManager.m; path = ../KYJDataManager.m; sourceTree = "<group>"; };
+		0A74AB1B16FB5F9000688C60 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		0A74AB1C16FB5F9000688C60 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		0A74AB1E16FB5F9000688C60 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		0A74AB1F16FB5F9000688C60 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0A7C0C9816ED14EA00490D59 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
 		0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		0A7C0C9C16EE8CAE00490D59 /* KYJFoursquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYJFoursquareViewController.h; sourceTree = "<group>"; };
 		0A7C0C9D16EE8CAE00490D59 /* KYJFoursquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYJFoursquareViewController.m; sourceTree = "<group>"; };
+		0AB2B2B516F7675E006AC755 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB2B2B616F7675E006AC755 /* CoreData.framework in Frameworks */,
 				0A7C0C8F16EA76FB00490D59 /* CoreLocation.framework in Frameworks */,
 				0A4A938416EA73D100C5ACFA /* MapKit.framework in Frameworks */,
 				0A2BC17E16DF95C000C8F1D0 /* UIKit.framework in Frameworks */,
@@ -78,8 +92,6 @@
 		0A2BC17116DF95C000C8F1D0 = {
 			isa = PBXGroup;
 			children = (
-				0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */,
-				0A4A938316EA73D100C5ACFA /* MapKit.framework */,
 				0A2BC18316DF95C000C8F1D0 /* NotesApp */,
 				0A2BC17C16DF95C000C8F1D0 /* Frameworks */,
 				0A2BC17B16DF95C000C8F1D0 /* Products */,
@@ -97,6 +109,9 @@
 		0A2BC17C16DF95C000C8F1D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AB2B2B516F7675E006AC755 /* CoreData.framework */,
+				0A7C0C8E16EA76FB00490D59 /* CoreLocation.framework */,
+				0A4A938316EA73D100C5ACFA /* MapKit.framework */,
 				0A2BC17D16DF95C000C8F1D0 /* UIKit.framework */,
 				0A2BC17F16DF95C000C8F1D0 /* Foundation.framework */,
 				0A2BC18116DF95C000C8F1D0 /* CoreGraphics.framework */,
@@ -107,6 +122,8 @@
 		0A2BC18316DF95C000C8F1D0 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A74AB0616FB4FE500688C60 /* KYJDataManager.h */,
+				0A74AB0716FB4FE500688C60 /* KYJDataManager.m */,
 				0A7C0C9A16ED14EE00490D59 /* Icon@2x.png */,
 				0A7C0C9816ED14EA00490D59 /* Icon.png */,
 				0A2BC18C16DF95C000C8F1D0 /* KYJAppDelegate.h */,
@@ -121,6 +138,11 @@
 				0A4980D616E94CFC00859BE7 /* KYJNotes.h */,
 				0A4980D716E94CFC00859BE7 /* KYJNotes.m */,
 				0A1C88A016E4538C004CFEEA /* KYJTableViewController.h */,
+				0A74AB0016FB4D0900688C60 /* NotesAppModel.xcdatamodeld */,
+				0A74AB1E16FB5F9000688C60 /* Location.h */,
+				0A74AB1F16FB5F9000688C60 /* Location.m */,
+				0A74AB1B16FB5F9000688C60 /* Note.h */,
+				0A74AB1C16FB5F9000688C60 /* Note.m */,
 				0A1C88A116E4538C004CFEEA /* KYJTableViewController.m */,
 				0A2BC18416DF95C000C8F1D0 /* Supporting Files */,
 			);
@@ -217,6 +239,10 @@
 				0A4980DB16E99F0200859BE7 /* KYJDetailViewController.m in Sources */,
 				0A4980DE16E9AE0500859BE7 /* KYJAddNoteTableViewController.m in Sources */,
 				0A7C0C9E16EE8CAE00490D59 /* KYJFoursquareViewController.m in Sources */,
+				0A74AB0216FB4D0900688C60 /* NotesAppModel.xcdatamodeld in Sources */,
+				0A74AB0816FB4FE500688C60 /* KYJDataManager.m in Sources */,
+				0A74AB1D16FB5F9000688C60 /* Note.m in Sources */,
+				0A74AB2016FB5F9000688C60 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +368,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A74AB0016FB4D0900688C60 /* NotesAppModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A74AB0116FB4D0900688C60 /* NotesAppModel.xcdatamodel */,
+			);
+			currentVersion = 0A74AB0116FB4D0900688C60 /* NotesAppModel.xcdatamodel */;
+			path = NotesAppModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0A2BC17216DF95C000C8F1D0 /* Project object */;
 }
