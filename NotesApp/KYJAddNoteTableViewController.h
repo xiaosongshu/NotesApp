@@ -9,15 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "KYJNotes.h"
+#import "Note.h"
 
 @class KYJAddNoteTableViewController;
 
 @protocol KYJAddNoteTableViewControllerDelegate <NSObject>
-- (void)addNoteTableViewController: (KYJAddNoteTableViewController *)controller didAddNote:(KYJNotes *)note;
+- (void)addNoteTableViewController: (KYJAddNoteTableViewController *)controller;
 @end
 
-@interface KYJAddNoteTableViewController : UITableViewController {
+@interface KYJAddNoteTableViewController : UITableViewController <CLLocationManagerDelegate>{
     CLLocationManager *locationManager;
 
 }

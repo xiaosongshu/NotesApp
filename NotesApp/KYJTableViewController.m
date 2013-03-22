@@ -7,18 +7,27 @@
 //
 
 #import "KYJTableViewController.h"
-#import "KYJNotes.h"
+#import "Note.h"
+#import "Location.h"
 #import "KYJDetailViewController.h"
 #import "KYJAddNoteTableViewController.h"
 #import "KYJDataManager.h"
+#import <CoreData/CoreData.h>
+
 
 #define kKYJCellIdentifier @"My Cell Identifier"
+#define kKYJNoteEntityName @"Note"
+#define kKYJLocationEntityName @"Location"
 
 @interface KYJTableViewController ()
-
+@property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+@property (nonatomic,strong) KYJDataManager *datamanager;
 @end
 
-@implementation KYJTableViewController {
+@implementation KYJTableViewController{
+    
 }
 
 @synthesize notes;
@@ -44,32 +53,39 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     notes = [NSMutableArray arrayWithCapacity:20];
-	KYJNotes *note = [[KYJNotes alloc] init];
-    note.title = @"Title 1";
-    note.description = @"Description 1 - @Boston";
-    note.latitude = 39.281516;
-    note.longitude = -76.580806;
-    note.locationName = @"Boston";
-    [notes addObject:note];
-    note = [[KYJNotes alloc] init];
-    note.title = @"Title 2";
-    note.description = @"Description 2 - @London";
-    note.latitude = 51.5081289;
-    note.longitude = -0.128005;
-    note.locationName = @"London";
-    [notes addObject:note];
-    note = [[KYJNotes alloc] init];
-    note.title = @"Title 3";
-    note.description = @"Description 3 - @New York";
-    note.latitude = 40.7167;
-    note.longitude = -74;
-    note.locationName = @"New York";
-    [notes addObject:note]; 
     
-    KYJDataManager *datamanager = [[KYJDataManager alloc] init];
-    [notes addObjectsFromArray:[datamanager getAllIdeas]];
-    [super viewDidLoad];
-    NSLog(@"viewDidAppear");
+    
+    self.datamanager = [[KYJDataManager alloc] init];
+    notes = [self.datamanager getAllIdeas];
+     NSLog(@"viewDidAppear");
+    
+//    Note *note = [dataManager addNoteWithText:<#(NSString *)#> description:<#(NSString *)#> locationName:<#(NSString *)#> longitude:(NSNumber *) latitude:(NSNumber *)]
+    
+//    Location *location = [NSEntityDescription insertNewObjectForEntityForName:kKYJLocationEntityName inManagedObjectContext:context];
+//
+//    
+//    note.title = @"Title 1";
+//    note.description2 = @"Description 1 - @Boston";
+//    location.latitude = [NSNumber numberWithFloat: 39.281516];
+//    location.longitude = [NSNumber numberWithFloat: -76.580806];
+//    note.locationName = @"Boston";
+//    [notes addObject:note];
+//    note = [[Note alloc] init];
+//    note.title = @"Title 2";
+//    note.description2 = @"Description 2 - @London";
+//    location.latitude = [NSNumber numberWithFloat: 51.5081289];
+//    location.longitude = [NSNumber numberWithFloat: -0.128005];
+//    note.locationName = @"London";
+//    [notes addObject:note];
+//    note = [[Note alloc] init];
+//    note.title = @"Title 3";
+//    note.description2 = @"Description 3 - @New York";
+//    location.latitude = [NSNumber numberWithFloat: 40.7167];
+//    location.longitude = [NSNumber numberWithFloat: -74];
+//    note.locationName = @"New York";
+//    [notes addObject:note]; 
+    
+
 }
 
 
@@ -86,9 +102,9 @@
 {
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kKYJCellIdentifier];
-    KYJNotes *note = [self.notes objectAtIndex:indexPath.row];
+    Note *note = [self.notes objectAtIndex:indexPath.row];
 	cell.textLabel.text = note.title;
-	cell.detailTextLabel.text = note.description;
+	cell.detailTextLabel.text = note.description2;
     return cell;
 }
 
@@ -160,28 +176,22 @@
 
 - (void)addNoteTableViewController:
 (KYJAddNoteTableViewController *)controller
-                       didAddNote:(KYJNotes *)note
 {
-	[self.notes addObject:note];
-	NSIndexPath *indexPath =
-    [NSIndexPath indexPathForRow:[self.notes count] - 1
-                       inSection:0];
-	[self.tableView insertRowsAtIndexPaths:
-     [NSArray arrayWithObject:indexPath]
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    self.notes = [self.datamanager getAllIdeas];
+	[tableView reloadData];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)updateNote:(UIStoryboardSegue *)segue {
     KYJDetailViewController *detailVC = segue.sourceViewController;
-    KYJNotes *updatedNote = [[KYJNotes alloc] init];
+    Note *updatedNote = [[Note alloc] init];
     updatedNote.title = detailVC.titleName;
-    updatedNote.description = detailVC.descriptionName;
+    updatedNote.description2 = detailVC.descriptionName;
     updatedNote.locationName = detailVC.locationName;
-    updatedNote.latitude = detailVC.latitude;
-    updatedNote.longitude = detailVC.longitude;
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
+    updatedNote.location.latitude = detailVC.latitude;
+    updatedNote.location.longitude = detailVC.longitude;
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
     [tableView reloadData];
 }
 

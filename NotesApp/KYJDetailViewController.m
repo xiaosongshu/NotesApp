@@ -7,7 +7,8 @@
 //
 
 #import "KYJDetailViewController.h"
-#import "KYJNotes.h"
+#import "Note.h"
+#import "Location.h"
 #import "KYJTableViewController.h"
 
 #define METERS_PER_MILE 1609.344
@@ -40,10 +41,10 @@
 	// Do any additional setup after loading the view.
     // note = [[KYJNotes alloc] init];
     titleLabel.text = note.title;
-    descriptionLabel.text = note.description;
+    descriptionLabel.text = note.description2;
     locationLabel.text = note.locationName;
-    self.latitude = note.latitude;
-    self.longitude = note.longitude;
+    self.latitude = note.location.latitude;
+    self.longitude = note.location.longitude;
     
 }
 
@@ -51,8 +52,8 @@
 - (void)viewDidAppear:(BOOL)animated {
     // 1
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = note.latitude;
-    zoomLocation.longitude= note.longitude;
+    zoomLocation.latitude = [note.location.latitude floatValue];
+    zoomLocation.longitude= [note.location.longitude floatValue];
     
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 2*METERS_PER_MILE, 2*METERS_PER_MILE);

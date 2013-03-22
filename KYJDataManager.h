@@ -14,8 +14,8 @@
 - (BOOL)addNoteWithText:(NSString *)title
             description:(NSString *)description
            locationName:(NSString *)locationName
-              longitude: (float) longitude
-               latitude: (float) latitude;
+              longitude: (NSNumber *) longitude
+               latitude: (NSNumber *) latitude;
 
 - (NSArray *)getAllIdeas;
 

@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KYJNotes.h"
+#import "Note.h"
 #import <MapKit/MapKit.h>
 
 @class KYJDetailViewController;
 
 @protocol KYJDetailViewControllerDelegate <NSObject>
-- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(KYJNotes *)updatedNote;
+- (void)detailViewControllerDidFinish:(KYJDetailViewController*)controller didUpdateNote:(Note *)updatedNote;
 @end
 
-@interface KYJDetailViewController : UIViewController <CLLocationManagerDelegate>;
+@interface KYJDetailViewController : UIViewController;
 
 @property (nonatomic, weak) id <KYJDetailViewControllerDelegate> delegate;
 
@@ -29,11 +29,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationLabel;
 @property (strong, nonatomic) NSString *locationName;
 
-@property (strong, nonatomic) KYJNotes *note;
-@property (strong, nonatomic) KYJNotes *updatedNote;
+@property (strong, nonatomic) Note *note;
+@property (strong, nonatomic) Note *updatedNote;
 
-@property float latitude;
-@property float longitude;
+@property (strong, nonatomic) NSNumber *latitude;
+@property (strong, nonatomic) NSNumber *longitude;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;

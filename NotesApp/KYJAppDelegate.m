@@ -7,7 +7,7 @@
 //
 
 #import "KYJAppDelegate.h"
-#import "KYJNotes.h"
+#import "Note.h"
 #import "KYJTableViewController.h"
 
 

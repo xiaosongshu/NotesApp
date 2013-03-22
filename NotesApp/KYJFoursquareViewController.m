@@ -7,7 +7,7 @@
 //
 
 #import "KYJFoursquareViewController.h"
-#import "KYJNotes.h"
+#import "Note.h"
 #import "KYJAddNoteTableViewController.h"
 
 #define kAYKCellIdentifier @"My Cell Identifier"

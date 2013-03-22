@@ -7,16 +7,15 @@
 //
 
 #import "KYJAddNoteTableViewController.h"
-#import "KYJNotes.h"
+#import "Note.h"
+#import "Location.h"
 #import "KYJTableViewController.h"
 #import "KYJFoursquareViewController.h"
 #import "KYJDataManager.h"
 
 
 @interface KYJAddNoteTableViewController () {
-    KYJNotes *note;
 }
-
 @end
 
 @implementation KYJAddNoteTableViewController
@@ -37,8 +36,6 @@
 {
     [super viewDidLoad];
         
-    note = [[KYJNotes alloc] init];
-
     self.titleTextField.adjustsFontSizeToFitWidth = YES;
     
     self.descriptionTextField.adjustsFontSizeToFitWidth = YES;
@@ -61,9 +58,7 @@
     NSLog(@"dLatitude : %@", latitude);
     NSLog(@"dLongitude : %@",longitude);
     
-    // Add location data (where Note was saved) to Note
-    note.latitude = coordinate.latitude;
-    note.longitude = coordinate.longitude;
+
 }
 
 
@@ -96,11 +91,20 @@
 }
 - (IBAction)done:(id)sender
 {
-	note.title = self.titleTextField.text;
-	note.description = self.descriptionTextField.text;
-    KYJDataManager *datamanager = [[KYJDataManager alloc] init];
-    [datamanager addNoteWithText: note.title description:note.description locationName:note.locationName longitude:note.longitude latitude:note.latitude];
-    [self.delegate addNoteTableViewController:self didAddNote:note];
+    CLLocation *location = [locationManager location];
+    
+    // Configure the new event with information from the location
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    NSNumber *latitude = [NSNumber numberWithFloat:coordinate.latitude];
+    NSNumber * longitude = [NSNumber numberWithFloat:coordinate.longitude];
+    
+    
+    KYJDataManager *datamanager = [[KYJDataManager alloc] init]; //MOve this to public variable initialized from controller
+    
+    [datamanager addNoteWithText: self.titleTextField.text description:self.descriptionTextField.text locationName:@" " longitude:longitude latitude:latitude];
+    
+    [self.delegate addNoteTableViewController:self ];
 }
 
 - (BOOL)textFieldShouldReturn:
@@ -124,10 +128,10 @@
 //}
 
 - (IBAction)foursquareLocation:(UIStoryboardSegue *)segue {
-    KYJFoursquareViewController *addNoteVC = segue.sourceViewController;
-    note.latitude = addNoteVC.latitude;
-    note.longitude = addNoteVC.longitude;
-    note.locationName = addNoteVC.locationSelected;
+//    KYJFoursquareViewController *addNoteVC = segue.sourceViewController;
+//    note.location.latitude = [NSNumber numberWithFloat:addNoteVC.latitude];
+//    note.location.longitude = [NSNumber numberWithFloat:addNoteVC.longitude];
+//    note.locationName = addNoteVC.locationSelected;
 }
 
 @end

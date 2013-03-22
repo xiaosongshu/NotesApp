@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KYJNotes.h"
+#import "Note.h"
 
 @class KYJFoursquareViewController;
 
 @protocol KYJFourSquareDelegate
 //-(void)foursquareNote: (KYJNotes*)passedNote;
--(void)foursquareTableViewController: (KYJFoursquareViewController *)controller foursquareNote: (KYJNotes*)passedNote;
+-(void)foursquareTableViewController: (KYJFoursquareViewController *)controller foursquareNote: (Note*)passedNote;
 @end
 
 @interface KYJFoursquareViewController : UITableViewController <NSURLConnectionDataDelegate>
