@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Note.h"
 
 @class KYJNote;
 @interface KYJDataManager : NSObject
@@ -16,6 +17,9 @@
            locationName:(NSString *)locationName
               longitude: (NSNumber *) longitude
                latitude: (NSNumber *) latitude;
+
+- (BOOL)updateIdea:(Note *)note withText:(NSString *)title description:(NSString *)description locationName:(NSString *)locationName
+         longitude:(NSNumber*)longitude latitude:(NSNumber*)latitude;
 
 - (NSArray *)getAllIdeas;
 

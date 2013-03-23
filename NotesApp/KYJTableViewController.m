@@ -184,12 +184,11 @@
 
 - (IBAction)updateNote:(UIStoryboardSegue *)segue {
     KYJDetailViewController *detailVC = segue.sourceViewController;
-    Note *updatedNote = [[Note alloc] init];
-    updatedNote.title = detailVC.titleName;
-    updatedNote.description2 = detailVC.descriptionName;
-    updatedNote.locationName = detailVC.locationName;
-    updatedNote.location.latitude = detailVC.latitude;
-    updatedNote.location.longitude = detailVC.longitude;
+    
+    KYJDataManager *datamanager = [[KYJDataManager alloc] init]; //Move this to public variable initialized from controller
+    
+    [datamanager updateIdea:detailVC.note withText:detailVC.titleName description:detailVC.descriptionName locationName:detailVC.locationName longitude:detailVC.longitude latitude:detailVC.latitude];
+
 //    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 //    [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
     [tableView reloadData];

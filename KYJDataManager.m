@@ -65,6 +65,21 @@
     return fetchedObjects;
 }
 
+- (BOOL)updateIdea:(Note *)note withText:(NSString *)title description:(NSString *)description locationName:(NSString *)locationName longitude:(NSNumber *)longitude latitude:(NSNumber *)latitude
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    note.title = title;
+    note.description2 = description;
+    note.locationName = locationName;
+    note.location.latitude = latitude;
+    note.location.longitude = longitude;
+    NSError *error;
+    if (![context save:&error]) {
+        NSLog(kKYJSaveError, [error localizedDescription]);
+        return NO;
+    }
+    return YES;
+}
 
 
 #pragma mark - Core Data stack
