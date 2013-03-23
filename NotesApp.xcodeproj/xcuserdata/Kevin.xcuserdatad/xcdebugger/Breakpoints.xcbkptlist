@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NotesApp/KYJAddNoteTableViewController.m"
-         timestampString = "385586506.806826"
+         timestampString = "385702019.131923"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "107"
-         endingLineNumber = "107"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
          landmarkName = "-done:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -26,6 +26,19 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "50"
          endingLineNumber = "50"
+         landmarkName = "-addNoteWithText:description:locationName:longitude:latitude:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "KYJDataManager.m"
+         timestampString = "385701953.055714"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "-addNoteWithText:description:locationName:longitude:latitude:"
          landmarkType = "5">
       </FileBreakpoint>

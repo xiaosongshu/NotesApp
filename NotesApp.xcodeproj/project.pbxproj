@@ -133,12 +133,12 @@
 				0A4980D916E99F0200859BE7 /* KYJDetailViewController.h */,
 				0A4980DA16E99F0200859BE7 /* KYJDetailViewController.m */,
 				0A1C88A016E4538C004CFEEA /* KYJTableViewController.h */,
+				0A1C88A116E4538C004CFEEA /* KYJTableViewController.m */,
 				0A74AB0016FB4D0900688C60 /* NotesAppModel.xcdatamodeld */,
 				0A74AB1E16FB5F9000688C60 /* Location.h */,
 				0A74AB1F16FB5F9000688C60 /* Location.m */,
 				0A74AB1B16FB5F9000688C60 /* Note.h */,
 				0A74AB1C16FB5F9000688C60 /* Note.m */,
-				0A1C88A116E4538C004CFEEA /* KYJTableViewController.m */,
 				0A2BC18416DF95C000C8F1D0 /* Supporting Files */,
 			);
 			path = NotesApp;

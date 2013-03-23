@@ -28,8 +28,8 @@
 - (BOOL)addNoteWithText:(NSString *)title
             description:(NSString *)description
            locationName:(NSString *)locationName
-              longitude: (float) longitude
-               latitude: (float) latitude;
+              longitude: (NSNumber*) longitude
+               latitude: (NSNumber*) latitude;
 {
     NSManagedObjectContext *context = [self managedObjectContext];
     Note *note = [NSEntityDescription insertNewObjectForEntityForName:kKYJNoteEntityName inManagedObjectContext:context];
@@ -39,8 +39,8 @@
     note.description2 = description;
     note.location = location;
     note.locationName = locationName;
-    location.latitude = [NSNumber numberWithFloat:latitude];
-    location.longitude = [NSNumber numberWithFloat:longitude];
+    location.latitude = latitude;
+    location.longitude = longitude;
     NSError *error;
     if (![context save:&error]) {
         NSLog(kKYJSaveError, [error localizedDescription]);

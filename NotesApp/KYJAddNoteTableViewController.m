@@ -55,8 +55,7 @@
     NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
     NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
     
-    NSLog(@"dLatitude : %@", latitude);
-    NSLog(@"dLongitude : %@",longitude);
+
     
 
 }
@@ -99,8 +98,10 @@
     NSNumber *latitude = [NSNumber numberWithFloat:coordinate.latitude];
     NSNumber * longitude = [NSNumber numberWithFloat:coordinate.longitude];
     
+    NSLog(@"Latitude : %@", latitude);
+    NSLog(@"Longitude : %@",longitude);
     
-    KYJDataManager *datamanager = [[KYJDataManager alloc] init]; //MOve this to public variable initialized from controller
+    KYJDataManager *datamanager = [[KYJDataManager alloc] init]; //Move this to public variable initialized from controller
     
     [datamanager addNoteWithText: self.titleTextField.text description:self.descriptionTextField.text locationName:@" " longitude:longitude latitude:latitude];
     
