@@ -91,16 +91,6 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-//    KYJNotes *passedNote = [[KYJNotes alloc] init];
-//    self.locationSelected = self.locations[indexPath.row][@"name"];
-//    self.latitude = [self.locations[indexPath.row][@"location"][@"lat"] floatValue];
-//    self.longitude = [self.locations[indexPath.row][@"location"][@"lng"] floatValue];
-//    passedNote.latitude = self.latitude;
-//    passedNote.longitude = self.longitude;
-    
-//    [self.delegate foursquareTableViewController:self foursquareNote: passedNote];
-//    NSLog(@"name = %@, lat = %f, long = %f",self.locationSelected, self.latitude, self.longitude);
-//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

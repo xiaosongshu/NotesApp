@@ -95,14 +95,6 @@
     return YES;
 }
 
-//- (IBAction)updateNote:(id)sender {
-//    KYJNotes *newNote = [[KYJNotes alloc] init];
-//    newNote.title = self.titleLabel.text;
-//    newNote.description = self.descriptionLabel.text;
-//    NSLog(@"delegate = %@", self.delegate);
-//    [self.delegate detailViewControllerDidFinish:self didUpdateNote:newNote];
-//}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"updateNoteSegue"]) {
         //self.updatedNote.description = self.descriptionLabel.text;
@@ -110,10 +102,6 @@
         self.titleName = self.titleLabel.text;
         self.descriptionName = self.descriptionLabel.text;
         self.locationName = self.locationLabel.text;
-        
-//        self.updatedNote.title = self.titleLabel.text;
-//        self.updatedNote.description = self.descriptionLabel.text;
-//        self.updatedNote.locationName = self.locationLabel.text;
     }
 }
 

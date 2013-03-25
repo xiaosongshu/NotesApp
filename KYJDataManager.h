@@ -10,7 +10,8 @@
 #import "Note.h"
 
 @class KYJNote;
-@interface KYJDataManager : NSObject
+@interface KYJDataManager : NSObject <UIApplicationDelegate> {
+}
 
 - (BOOL)addNoteWithText:(NSString *)title
             description:(NSString *)description
@@ -22,5 +23,9 @@
          longitude:(NSNumber*)longitude latitude:(NSNumber*)latitude;
 
 - (NSArray *)getAllIdeas;
+
+- (NSManagedObjectContext *)managedObjectContext;
+
+
 
 @end

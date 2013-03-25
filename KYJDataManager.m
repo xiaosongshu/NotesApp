@@ -18,7 +18,7 @@
 #define kKYJSaveError @"Whoops, couldn't save: %@"
 
 @interface KYJDataManager ()
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
 @property (strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @end
@@ -80,6 +80,7 @@
     }
     return YES;
 }
+
 
 
 #pragma mark - Core Data stack

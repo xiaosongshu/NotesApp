@@ -1,4 +1,18 @@
-Notes App
+Notes App [post Core Data]
+
+Features: 
+
+(required)
+- Notes persist even if you "exit" the app
+- Notes are ordered by title name (Numbers -> Capitalized -> Non-capitalized)
+
+(extra)
+- Editing notes work with Core Data
+- foursquare API still working with Core Data
+
+---
+
+Notes App [pre Core Data]
 
 Features:
 

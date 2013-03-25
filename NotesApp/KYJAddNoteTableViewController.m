@@ -46,17 +46,6 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     [locationManager startUpdatingLocation];
-    
-    CLLocation *location = [locationManager location];
-    
-    // Configure the new event with information from the location
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
-    NSString *latitude = [NSString stringWithFormat:@"%f", coordinate.latitude];
-    NSString *longitude = [NSString stringWithFormat:@"%f", coordinate.longitude];
-    
-
-    
 
 }
 
@@ -97,13 +86,21 @@
     
     NSNumber *latitude = [NSNumber numberWithFloat:coordinate.latitude];
     NSNumber * longitude = [NSNumber numberWithFloat:coordinate.longitude];
+    NSString *locationName = @"";
+
     
     NSLog(@"Latitude : %@", latitude);
     NSLog(@"Longitude : %@",longitude);
     
     KYJDataManager *datamanager = [[KYJDataManager alloc] init]; //Move this to public variable initialized from controller
     
-    [datamanager addNoteWithText: self.titleTextField.text description:self.descriptionTextField.text locationName:@" " longitude:longitude latitude:latitude];
+    if ([self.foursquareLocationName length] != 0){
+        latitude = self.foursquareLatitude;
+        longitude = self.foursquareLongitude;
+        locationName = self.foursquareLocationName;
+    }
+    
+    [datamanager addNoteWithText: self.titleTextField.text description:self.descriptionTextField.text locationName:locationName longitude:longitude latitude:latitude];
     
     [self.delegate addNoteTableViewController:self ];
 }
@@ -115,24 +112,11 @@
     return YES;
 }
 
-//- (IBAction)passFoursquare:(UIStoryboardSegue *)segue {
-//      KYJFoursquareViewController *foursquareVC = segue.sourceViewController;
-//      note.latitude = foursquareVC.latitude;
-//      note.longitude = foursquareVC.longitude;
-//    
-////    KYJNotes *updatedNote = [[KYJNotes alloc] init];
-////    updatedNote.title = detailVC.titleName;
-////    updatedNote.description = detailVC.descriptionName;
-////    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-////    [self.notes replaceObjectAtIndex:indexPath.row withObject:updatedNote];
-////    [tableView reloadData];
-//}
-
 - (IBAction)foursquareLocation:(UIStoryboardSegue *)segue {
-//    KYJFoursquareViewController *addNoteVC = segue.sourceViewController;
-//    note.location.latitude = [NSNumber numberWithFloat:addNoteVC.latitude];
-//    note.location.longitude = [NSNumber numberWithFloat:addNoteVC.longitude];
-//    note.locationName = addNoteVC.locationSelected;
+    KYJFoursquareViewController *addNoteVC = segue.sourceViewController;
+    self.foursquareLatitude = [NSNumber numberWithFloat:addNoteVC.latitude];
+    self.foursquareLongitude = [NSNumber numberWithFloat:addNoteVC.longitude];
+    self.foursquareLocationName = addNoteVC.locationSelected;
 }
 
 @end

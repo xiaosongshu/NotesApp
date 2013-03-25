@@ -33,5 +33,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 
+@property (strong, nonatomic) NSString *foursquareLocationName;
+@property (strong, nonatomic) NSNumber *foursquareLatitude;
+@property (strong, nonatomic) NSNumber *foursquareLongitude;
+
+
+
+
 @end
 
